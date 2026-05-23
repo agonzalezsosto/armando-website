@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="../styles/album.css" rel="stylesheet" />
+        <script src="../../scripts/album.js" defer></script>
+        <script src="../../scripts/animations/tree/agsLine.js" defer></script>
+        <script src="../../scripts/animations/tree/branch.js" defer></script>
+        <script src="../../scripts/animations/tree/sketch.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.11.13/lib/p5.js"></script>
+        <title>{{ title }} - {{ artist }}</title>
+    </head>
+    <body>
+        <audio preload="metadata" class="audio">
+            <source type="audio/mpeg" />
+        </audio>
+        {% include 'toolbar.html' %}
+        <main>
+            <div class="container">
+                <div>
+                    <h1>{{ title }} - {{ artist }}</h1>
+                    <div class="player">
+                        <div class="current-song"></div>
+                        <div class="player-inside">
+                            <button type="button" class="big-play">▶</button>
+                            <input
+                                type="range"
+                                class="player-progress-bar"
+                                max="100"
+                                min="0"
+                                value="0"
+                            />
+                        </div>
+                    </div>
+                    <ol>
+                        {% for track in tracks %}
+                        <li>
+                            <button type="button" class="play">▶</button>
+                            <span>{{ track }}</span>
+                        </li>
+                        {% endfor %}
+                    </ol>
+                    <a>Download all tracks</a>
+                </div>
+                <img src="../images/albums/{{image}}" />
+            </div>
+        </main>
+    </body>
+</html>

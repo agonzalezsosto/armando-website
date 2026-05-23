@@ -1,0 +1,16 @@
+@import "global.css";
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: 1rem;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 2.5vh;
+}
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}

@@ -1,0 +1,29 @@
+html {
+    font-family: arial;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    font-size: 1.5rem;
+}
+
+nav {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    padding-inline: 1.5rem;
+    gap: 1rem;
+}
+
+nav .title {
+    margin-inline-end: auto;
+}
+
+nav .items {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}

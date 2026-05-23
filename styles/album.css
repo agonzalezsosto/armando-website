@@ -1,0 +1,64 @@
+@import "global.css";
+
+ol {
+    padding-inline: 0.5vw;
+    list-style: none;
+}
+
+li {
+    padding-bottom: 1rem;
+    cursor: default;
+}
+
+h1 {
+    font-size: 1rem;
+}
+
+img {
+    width: 30vw;
+}
+
+.container {
+    padding-top: 5vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding-inline: 1.5rem;
+}
+
+.container img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.big-play {
+    width: 40px;
+    height: 40px;
+}
+
+.player-inside {
+    display: flex;
+}
+
+.player-progress-bar {
+    width: 40vw;
+    margin-left: 1vw;
+}
+
+.current-song {
+    font-weight: bold;
+    padding-bottom: 2vh;
+}
+
+.player {
+    padding-top: 20px;
+}
+
+#p5-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}

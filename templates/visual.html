@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="../styles/index.css" rel="stylesheet" />
+        <title>Armando González Sosto</title>
+    </head>
+    <body>
+        {% include 'toolbar.html' %}
+        <main>
+            <div class="gallery">
+                {% for album in albums %}
+                <a href="/music/{{album}}">
+                    <img src="../images/albums/{{album}}.jpg" />
+                </a>
+                {% endfor %}
+            </div>
+        </main>
+    </body>
+</html>
