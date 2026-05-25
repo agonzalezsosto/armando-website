@@ -9,12 +9,18 @@
     <body>
         {% include 'toolbar.html' %}
         <main>
-            <div class="gallery">
-                {% for album in albums %}
-                <a href="/music/{{album}}">
-                    <img src="../images/albums/{{album}}.jpg" />
-                </a>
-                {% endfor %}
+            <div>
+                <div class="gallery">
+                    {% for album in solo_albums %}
+                    <a href="/music/{{album}}">
+                        <img src="../images/albums/{{album}}.jpg" />
+                    </a>
+                    {% endfor %} {% for album in collab_albums %}
+                    <a href="/music/{{album}}">
+                        <img src="../images/albums/{{album}}.jpg" />
+                    </a>
+                    {% endfor %}
+                </div>
             </div>
         </main>
     </body>

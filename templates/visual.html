@@ -10,9 +10,9 @@
         {% include 'toolbar.html' %}
         <main>
             <div class="gallery">
-                {% for album in albums %}
-                <a href="/music/{{album}}">
-                    <img src="../images/albums/{{album}}.jpg" />
+                {% for project in projects %}
+                <a href="/visuals/{{project}}">
+                    <img src="../images/visuals/{{project}}.jpg" />
                 </a>
                 {% endfor %}
             </div>

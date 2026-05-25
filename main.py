@@ -1,9 +1,16 @@
+from pathlib import Path
+
 from fastapi import FastAPI, Request
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from markdown_it import MarkdownIt
+from markupsafe import Markup
 
 from metadata import metadata
+
+md = MarkdownIt()
+
 
 templates = Jinja2Templates(directory="templates")
 
@@ -18,7 +25,7 @@ app.mount("/audio", StaticFiles(directory="audio"), name="audio")
 
 @app.get("/")
 def read_root(request: Request):
-    albums = [
+    solo_albums = [
         "clicking-around",
         "fall-17",
         "ignored",
@@ -27,16 +34,22 @@ def read_root(request: Request):
         "ventana",
         "worm",
     ]
+
+    collab_albums = ["joebowman", "mptl", "warmly", "bac", "mud"]
     return templates.TemplateResponse(
-        request=request, name="index.html", context={"albums": albums}
+        request=request,
+        name="index.html",
+        context={"solo_albums": solo_albums, "collab_albums": collab_albums},
     )
 
 
 @app.get("/about")
 def read_about(request: Request):
+    file_path = Path("markdown/about.md")
+    raw_text = file_path.read_text(encoding="utf-8")
+    html = md.render(raw_text)
     return templates.TemplateResponse(
-        request=request,
-        name="about.html",
+        request=request, name="about.html", context={"content": Markup(html)}
     )
 
 
@@ -49,4 +62,7 @@ def read_music(request: Request, album: str):
 
 @app.get("/visual")
 def read_visual(request: Request):
-    return templates.TemplateResponse(request=request, name="visual.html")
+    projects = ["gone", "nh", "merriweather", "itr", "dt"]
+    return templates.TemplateResponse(
+        request=request, name="visual.html", context={"projects": projects}
+    )

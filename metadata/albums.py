@@ -33,4 +33,9 @@ albums = {
             "smw",
         ],
     },
+    "mptl": {"image": "mptl.jpg"},
+    "joebowman": {"image": "joebowman.jpg"},
+    "warmly": {"image": "warmly.jpg"},
+    "bac": {"image": "bac.jpg"},
+    "mud": {"image": "mud.jpg"},
 }
