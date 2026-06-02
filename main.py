@@ -66,3 +66,8 @@ def read_visual(request: Request):
     return templates.TemplateResponse(
         request=request, name="visual.html", context={"projects": projects}
     )
+
+
+@app.get("/maze")
+def read_maze(request: Request):
+    return templates.TemplateResponse(request=request, name="maze.html")
