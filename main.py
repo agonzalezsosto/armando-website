@@ -21,6 +21,7 @@ app.mount("/styles", StaticFiles(directory="styles"), name="styles")
 app.mount("/images", StaticFiles(directory="images"), name="images")
 app.mount("/scripts", StaticFiles(directory="scripts"), name="scripts")
 app.mount("/audio", StaticFiles(directory="audio"), name="audio")
+app.mount("/maze-assets", StaticFiles(directory="maze-assets"), name="maze-assets")
 
 
 @app.get("/")
