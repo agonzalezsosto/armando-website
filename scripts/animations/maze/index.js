@@ -41,7 +41,7 @@ function start() {
         mousePressed = true;
       };
 
-      if (container.children.length > 30) {
+      if (container.children.length > 50) {
         const oldestChild = container.firstElementChild;
         container.removeChild(oldestChild);
       }
