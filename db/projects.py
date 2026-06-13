@@ -15,7 +15,7 @@ projects = {
         "type": "album",
         "title": "La sintaxis de un lenguaje cambia dependiendo del nivel de abstracción",
         "artist": "Armando González Sosto + Cristobal García Belmont",
-        "about": "aaa",
+        "about-file": "sintaxis.md",
         "tracks": [
             "La sintaxis de un lenguaje cambia dependiendo del nivel de abstracción",
             "La sin↑axis ↑e un len↑uaje ↑am↑ia ↑e↑en↑ien↑o ↑el nivel ↑e a↑s↑racción",

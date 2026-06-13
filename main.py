@@ -51,6 +51,13 @@ def read_name(request: Request, name: str):
     try:
         match project:
             case {"type": "album"}:
+                if about := project.get("about-file"):
+                    file_path = Path(f"assets/text/{about}")
+                    raw_text = file_path.read_text(encoding="utf-8")
+                    html = md.render(raw_text)
+
+                    project["about"] = Markup(html)
+
                 return templates.TemplateResponse(
                     request=request,
                     name="album.html",
