@@ -1,0 +1,62 @@
+projects = {
+    "clicking-around": {
+        "image": "clicking-around.jpg",
+        "type": "album",
+    },
+    "mptl": {
+        "image": "mptl.jpg",
+        "title": "Sod In Heaven",
+        "artist": "MPTL Microplastics",
+        "type": "article",
+        "article-name": "aaa.md",
+    },
+}
+
+
+# albums = {
+#     "clicking-around": {
+#         "format": "album",
+#         "title": "Clicking Around",
+#         "artist": "Armando González Sosto",
+#         "image": "clicking-around.jpg",
+#         "about": "ajaja",
+#         "tracks": [
+#             "REJEGO",
+#             "2 Pt 1",
+#             "2 Pt 2",
+#             "monos",
+#             "EVERY MOMENT FEELS SO LIGHT",
+#             "BAJONEAO",
+#             "prequel",
+#         ],
+#     },
+#     "fall-17": {
+#         "title": "Fall 17",
+#         "artist": "Armando González Sosto",
+#         "image": "fall-17.jpg",
+#         "about": "ajaja",
+#         "tracks": ["omnipresencia deambulante", "return", "norvegicus", "gandoca"],
+#     },
+#     "ignored": {
+#         "title": "ignored",
+#         "artist": "Armando González Sosto",
+#         "image": "ignored.jpg",
+#         "about": "ajaja",
+#         "tracks": [
+#             "i don't want to be fulfilled",
+#             "come breathe disappear",
+#             "two or three things",
+#             "smw",
+#         ],
+#     },
+#     "mptl": {
+#         "image": "mptl.jpg",
+#         "title": "Sod In Heaven",
+#         "artist": "MPTL Microplastics",
+#         "format": "summary",
+#     },
+#     "joebowman": {"image": "joebowman.jpg"},
+#     "warmly": {"image": "warmly.jpg"},
+#     "bac": {"image": "bac.jpg"},
+#     "mud": {"image": "mud.jpg"},
+# }

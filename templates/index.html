@@ -11,13 +11,11 @@
         <main>
             <div>
                 <div class="gallery">
-                    {% for album in solo_albums %}
-                    <a href="/music/{{album}}">
-                        <img src="../images/albums/{{album}}.jpg" />
-                    </a>
-                    {% endfor %} {% for album in collab_albums %}
-                    <a href="/music/{{album}}">
-                        <img src="../images/albums/{{album}}.jpg" />
+                    {% for project in projects %}
+                    <a href="/{{project}}">
+                        <img
+                            src="../assets/images/grid/{{projects.get(project).get('image')}}"
+                        />
                     </a>
                     {% endfor %}
                 </div>

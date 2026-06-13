@@ -7,7 +7,7 @@ from fastapi.templating import Jinja2Templates
 from markdown_it import MarkdownIt
 from markupsafe import Markup
 
-from metadata import metadata
+from db import projects
 
 md = MarkdownIt()
 
@@ -18,29 +18,14 @@ app = FastAPI()
 
 app.add_middleware(GZipMiddleware)
 app.mount("/styles", StaticFiles(directory="styles"), name="styles")
-app.mount("/images", StaticFiles(directory="images"), name="images")
+app.mount("/assets", StaticFiles(directory="assets"), name="assets")
 app.mount("/scripts", StaticFiles(directory="scripts"), name="scripts")
-app.mount("/audio", StaticFiles(directory="audio"), name="audio")
-app.mount("/maze-assets", StaticFiles(directory="maze-assets"), name="maze-assets")
 
 
 @app.get("/")
 def read_root(request: Request):
-    solo_albums = [
-        "clicking-around",
-        "fall-17",
-        "ignored",
-        "propiedades",
-        "protestant-reformation",
-        "ventana",
-        "worm",
-    ]
-
-    collab_albums = ["joebowman", "mptl", "warmly", "bac", "mud"]
     return templates.TemplateResponse(
-        request=request,
-        name="index.html",
-        context={"solo_albums": solo_albums, "collab_albums": collab_albums},
+        request=request, name="index.html", context={"projects": projects}
     )
 
 
@@ -54,21 +39,28 @@ def read_about(request: Request):
     )
 
 
-@app.get("/music/{album}")
-def read_music(request: Request, album: str):
-    return templates.TemplateResponse(
-        request=request, name="album.html", context={**metadata[album]}
-    )
-
-
-@app.get("/visual")
-def read_visual(request: Request):
-    projects = ["gone", "nh", "merriweather", "itr", "dt"]
-    return templates.TemplateResponse(
-        request=request, name="visual.html", context={"projects": projects}
-    )
-
-
 @app.get("/maze")
 def read_maze(request: Request):
     return templates.TemplateResponse(request=request, name="maze.html")
+
+
+@app.get("/{name}")
+def read_name(request: Request, name: str):
+    project = projects.get(name)
+    print(project)
+
+    try:
+        match project:
+            case {"type": "album"}:
+                return templates.TemplateResponse(request=request, name="album.html")
+            case {"type": "article"}:
+                file_path = Path(f"assets/text/{project.get('article-name')}")
+                raw_text = file_path.read_text(encoding="utf-8")
+                html = md.render(raw_text)
+                return templates.TemplateResponse(
+                    request=request,
+                    name="article.html",
+                    context={"content": Markup(html)},
+                )
+    except KeyError:
+        return
