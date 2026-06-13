@@ -57,6 +57,7 @@ def read_name(request: Request, name: str):
                 file_path = Path(f"assets/text/{project.get('article-name')}")
                 raw_text = file_path.read_text(encoding="utf-8")
                 html = md.render(raw_text)
+
                 return templates.TemplateResponse(
                     request=request,
                     name="article.html",

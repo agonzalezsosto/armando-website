@@ -1,0 +1,9 @@
+@import "global.css";
+
+main {
+    padding-inline: 1.5rem;
+}
+
+img {
+    width: 25vw;
+}

@@ -8,7 +8,7 @@ projects = {
         "title": "Sod In Heaven",
         "artist": "MPTL Microplastics",
         "type": "article",
-        "article-name": "aaa.md",
+        "article-name": "sod-in-heaven.md",
     },
 }
 
