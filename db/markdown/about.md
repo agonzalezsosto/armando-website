@@ -1,4 +1,4 @@
-I was born in San José, Costa Rica.
+b. 1995. San José, Costa Rica.
 
 I am currently based in London, UK.
 

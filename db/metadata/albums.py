@@ -1,5 +1,6 @@
 albums = {
     "clicking-around": {
+        "format": "album",
         "title": "Clicking Around",
         "artist": "Armando González Sosto",
         "image": "clicking-around.jpg",
@@ -33,7 +34,12 @@ albums = {
             "smw",
         ],
     },
-    "mptl": {"image": "mptl.jpg"},
+    "mptl": {
+        "image": "mptl.jpg",
+        "title": "Sod In Heaven",
+        "artist": "MPTL Microplastics",
+        "format": "summary",
+    },
     "joebowman": {"image": "joebowman.jpg"},
     "warmly": {"image": "warmly.jpg"},
     "bac": {"image": "bac.jpg"},
