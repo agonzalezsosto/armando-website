@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="../styles/index.css" rel="stylesheet" />
+        <link href="./styles/index.css" rel="stylesheet" />
         <title>Armando González Sosto</title>
     </head>
     <body>
@@ -14,7 +14,7 @@
                     {% for project in projects %}
                     <a href="/{{project}}">
                         <img
-                            src="../assets/images/grid/{{projects.get(project).get('image')}}"
+                            src="./assets/images/grid/{{projects.get(project).get('image')}}"
                         />
                     </a>
                     {% endfor %}
