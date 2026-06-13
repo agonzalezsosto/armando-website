@@ -47,12 +47,15 @@ def read_maze(request: Request):
 @app.get("/{name}")
 def read_name(request: Request, name: str):
     project = projects.get(name)
-    print(project)
 
     try:
         match project:
             case {"type": "album"}:
-                return templates.TemplateResponse(request=request, name="album.html")
+                return templates.TemplateResponse(
+                    request=request,
+                    name="album.html",
+                    context={**project},
+                )
             case {"type": "article"}:
                 file_path = Path(f"assets/text/{project.get('article-name')}")
                 raw_text = file_path.read_text(encoding="utf-8")
